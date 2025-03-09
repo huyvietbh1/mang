@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
+#define N 1000004
 using namespace std;
-int n,k,a[100005],res;
+int n,k,a[N],cnt[N],ans;
 int main()
 {
     cin >> n >> k;
@@ -8,10 +9,10 @@ int main()
         cin >> a[i];
     for(int i=1; i<=n; i++)
     {
-        int s = k-a[i];
-        if(binary_search(a+i,a+n+1,s));
-            res++;
+        int x = k-a[i];
+        ans += cnt[x];
+        cnt[a[i]]++;
     }
-    cout << res;
+    cout << ans;
     return 0;
 }
